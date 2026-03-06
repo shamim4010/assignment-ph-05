@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issues Tracker</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="w-full max-w-[1600px] h-screen font-['Geist',sans-serif]">
+    <header>
+        <div class="navbar bg-base-300 shadow-sm">
+            <div class="flex-1">
+                <a class="btn btn-ghost text-sm"><img src="../assets/github-logo.png" alt="Logo" width="30"> Github Issues Tracker</a>
+            </div>
+            <div class="flex gap-2">
+                <label class="input">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                        >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input type="search" required placeholder="Search Issues..." />
+                </label>
+                <button class="btn bg-primary text-white">Search</button>
+            </div>
+        </div>
+    </header>
+    <main class="px-8">
+        <section id="btn-list" class="mt-16">
+            <button class="btn btn-outline btn-sm btn-primary">All</button>
+            <button class="btn btn-outline btn-sm btn-primary">Open</button>
+            <button class="btn btn-outline btn-sm btn-primary">closed</button>
+        </section>
+        <section id="issues-count" class="mt-5 border border-gray-300 p-2 rounded-lg flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="../assets/Aperture.png" alt="">
+                <div>
+                    <h3 class="text-lg"><span id="all-issues-count">0</span> Issues</h3>
+                    <p class="text-[11px] opacity-[0.7]">Track and manage your project issues</p>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <div>
+                    <div aria-label="status" class="status bg-green-500"></div> <span class="text-[12px] opacity-[0.7]">Open</span>
+                </div>
+                <div>
+                    <div aria-label="status" class="status bg-purple-600"></div> <span class="text-[12px] opacity-[0.7]">Closed</span>
+                </div>
+            </div>
+        </section>
+        <section id="all-data" class="mt-5">
+
+        </section>
+    </main>
+    <script src="../script/home.js"></script>
+</body>
+</html>
