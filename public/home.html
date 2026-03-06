@@ -39,30 +39,39 @@
     </header>
     <main class="px-8">
         <section id="btn-list" class="mt-16">
-            <button class="btn btn-outline btn-sm btn-primary">All</button>
-            <button class="btn btn-outline btn-sm btn-primary">Open</button>
-            <button class="btn btn-outline btn-sm btn-primary">closed</button>
+            <button onclick="btnClickHandler('btn-all')" id="btn-all" class="btn btn-outline btn-sm btn-primary bg-primary text-white">All</button>
+            <button onclick="btnClickHandler('btn-open')" id="btn-open" class="btn btn-sm border-green-500 hover:bg-green-500 hover:text-white">Open</button>
+            <button onclick="btnClickHandler('btn-closed')" id="btn-closed" class="btn btn-sm border-purple-600 hover:bg-purple-600 hover:text-white">closed</button>
         </section>
-        <section id="issues-count" class="mt-5 border border-gray-300 p-2 rounded-lg flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <img src="../assets/Aperture.png" alt="">
-                <div>
-                    <h3 class="text-lg"><span id="all-issues-count">0</span> Issues</h3>
-                    <p class="text-[11px] opacity-[0.7]">Track and manage your project issues</p>
+        <div id="click-handler">
+            <section id="issues-count" class="mt-5 border border-gray-300 p-2 rounded-lg flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <img src="../assets/Aperture.png" alt="">
+                    <div>
+                        <h3 class="text-lg">
+                            <span id="all-issues-count">0</span>
+                            <span id="open-issues-count" class="hidden">01</span>
+                            <span id="closed-issues-count" class="hidden">02</span> 
+                            Issues
+                        </h3>
+                        <p class="text-[11px] opacity-[0.7]">Track and manage your project issues</p>
+                    </div>
                 </div>
-            </div>
-            <div class="flex gap-2">
-                <div>
-                    <div aria-label="status" class="status bg-green-500"></div> <span class="text-[12px] opacity-[0.7]">Open</span>
+                <div class="flex gap-2">
+                    <div>
+                        <div aria-label="status" class="status bg-green-500"></div> <span class="text-[12px] opacity-[0.7]">Open</span>
+                    </div>
+                    <div>
+                        <div aria-label="status" class="status bg-purple-600"></div> <span class="text-[12px] opacity-[0.7]">Closed</span>
+                    </div>
                 </div>
-                <div>
-                    <div aria-label="status" class="status bg-purple-600"></div> <span class="text-[12px] opacity-[0.7]">Closed</span>
-                </div>
-            </div>
-        </section>
-        <section id="all-data" class="mt-5">
-
-        </section>
+            </section>
+            <section id="all-data" class="mt-5">
+                <div id="all" class="hidden">All</div>
+                <div id="open" class="hidden">Open</div>
+                <div id="closed" class="hidden">Close</div>
+            </section>
+        </div>
     </main>
     <script src="../script/home.js"></script>
 </body>
