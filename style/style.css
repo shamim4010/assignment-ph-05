@@ -1,0 +1,12 @@
+.card-open {
+    border: 1px solid #80808071;
+    border-top:3px solid #00C950;
+    border-radius: 0.4rem;
+    padding: 8px 0;
+}
+.card-closed {
+    border: 1px solid #80808071;
+    border-top:3px solid #9810FA;
+    border-radius: 0.4rem;
+    padding: 8px 0;
+}

@@ -1,8 +1,8 @@
-/* const loadAllData = async () => {
+const loadAllData = async () => {
     fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((allData) => allData.json())
     .then((viewData) => rcvData(viewData.data))
-} */
+}
 
 const btnAll = document.getElementById("btn-all");
 const btnOpen = document.getElementById("btn-open");
@@ -45,3 +45,13 @@ const btnClickHandler = (btnClicked) => {
         closed.classList.remove('hidden');
     }
 }
+
+const rcvData = (allData) => {
+    allData.forEach(item => {
+        if (item.status === "open"){
+            const div = document.createElement('div')
+        }
+    });
+}
+
+loadAllData();
