@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issues Tracker</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="w-full h-full font-['Geist',sans-serif]">
+    <div class="w-[300px] flex flex-col items-center border border-gray-300 px-12 py-8 rounded-lg relative top-50 left-[50%] translate-x-[-50%]">
+        <form>
+            <label class="input validator">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    >
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                    </g>
+                </svg>
+                <input type="text" id="email" placeholder="Username" required/>
+            </label>
+            <p class="validator-hint">admin</p>
+            <label class="input validator">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    >
+                    <path
+                        d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"
+                    ></path>
+                    <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                    </g>
+                </svg>
+                <input type="password" id="password" placeholder="Password" required/>
+            </label>
+            <p class="validator-hint">admin123<br /></p>
+        </form>
+        <button id="signin" class="btn btn-primary">Sign in</button>
+        <div class="mt-3 flex flex-col items-center">
+            <span class="w-6 h-6 text-[12px] mb-4 p-1 flex justify-center items-center border border-gray-300 rounded-full">OR</span>
+            <p class="text-[10px] opacity-[0.7] mb-2">Demo Credentials:</p>
+            <p class="text-[12px]">Username: admin</p>
+            <p class="text-[12px]">Password: admin123</p>
+        </div>
+    </div>
+    <script src="../script/login.js"></script>
+</body>
+</html>
