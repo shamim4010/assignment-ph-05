@@ -4,7 +4,7 @@ document.getElementById("signin").addEventListener("click", function () {
     
     if (email === "admin"){
         if(pass === "admin123"){
-            window.location.assign('../public/home.html')
+            window.location.assign('./public/home.html')
         }
         else{
             alert('password is wrong')
