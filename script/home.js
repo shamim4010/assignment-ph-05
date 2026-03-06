@@ -49,9 +49,58 @@ const btnClickHandler = (btnClicked) => {
 const rcvData = (allData) => {
     allData.forEach(item => {
         if (item.status === "open"){
-            const div = document.createElement('div')
+            const div = document.createElement('div');
+            div.className = 'card-open';
+            div.innerHTML = `
+                <div class="px-[8px] flex flex-col gap-2">
+                    <div class="flex justify-between items-center">
+                        <img src="../assets/Open-Status.png" alt="">
+                        <p class="priority text-[9px] font-semibold px-3 py-[3px] rounded-xl"></p>
+                    </div>
+                    <h2 class="text-[14px]">${item.title}</h2>
+                    <p class="text-[10px] opacity-[0.7]">${item.description}</p>
+                    <div class="flex gap-2">
+                    </div>
+                </div>
+                <hr class="opacity-[0.3] mt-4 mb-4">
+                <div class="px-[8px]">
+                    <p class="text-[10px] opacity-[0.7]">#1 by john_doe</p>
+                    <p class="text-[10px] opacity-[0.7]">1/15/2024</p>
+                </div>
+            `
+            all.appendChild(div);
+        }
+        else if (item.status === "closed"){
+            const div = document.createElement('div');
+            div.className = 'card-closed';
+            div.innerHTML = `
+                <div class="px-[8px] flex flex-col gap-2">
+                    <div class="flex justify-between items-center">
+                        <img src="../assets/Closed- Status .png" alt="">
+                        <p class="priority-${item.id} text-[9px] font-semibold px-3 py-[3px] rounded-xl"></p>
+                    </div>
+                    <h2 class="text-[14px]">${item.title}</h2>
+                    <p class="text-[10px] opacity-[0.7]">${item.description}</p>
+                    <div class="flex gap-2">
+                    </div>
+                </div>
+                <hr class="opacity-[0.3] mt-4 mb-4">
+                <div class="px-[8px]">
+                    <p class="text-[10px] opacity-[0.7]">#1 by john_doe</p>
+                    <p class="text-[10px] opacity-[0.7]">1/15/2024</p>
+                </div>
+            `
+            all.appendChild(div);
         }
     });
+
+    allData.forEach(itemPy => {
+        if (itemPy.priority === "high"){
+            const py = document.getElementsByClassName(`priority-${itemPy.id}`);
+            py.classList.add('bg-red-100','text-red-500');
+            py.innerText = 'HIGH'
+        }
+    })
 }
 
 loadAllData();
