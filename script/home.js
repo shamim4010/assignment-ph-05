@@ -59,7 +59,7 @@ const rcvData = (allData) => {
                     </div>
                     <h2 class="text-[14px]">${item.title}</h2>
                     <p class="text-[10px] opacity-[0.7]">${item.description}</p>
-                    <div class="flex gap-2">
+                    <div class="labels flex gap-2">
                     </div>
                 </div>
                 <hr class="opacity-[0.3] mt-4 mb-4">
@@ -81,7 +81,7 @@ const rcvData = (allData) => {
                     </div>
                     <h2 class="text-[14px]">${item.title}</h2>
                     <p class="text-[10px] opacity-[0.7]">${item.description}</p>
-                    <div class="flex gap-2">
+                    <div class="labels flex gap-2">
                     </div>
                 </div>
                 <hr class="opacity-[0.3] mt-4 mb-4">
@@ -91,6 +91,53 @@ const rcvData = (allData) => {
                 </div>
             `
             all.appendChild(div);
+        }
+    });
+
+    allData.forEach(item => {
+        if (item.status === "open"){
+            const div = document.createElement('div');
+            div.className = 'card-open';
+            div.innerHTML = `
+                <div class="px-[8px] flex flex-col gap-2">
+                    <div class="flex justify-between items-center">
+                        <img src="../assets/Open-Status.png" alt="">
+                        <p id="priority-${item.id}" class="all text-[9px] font-semibold px-3 py-[3px] rounded-lg">${item.priority}</p>
+                    </div>
+                    <h2 class="text-[14px]">${item.title}</h2>
+                    <p class="text-[10px] opacity-[0.7]">${item.description}</p>
+                    <div class="labels flex gap-2">
+                    </div>
+                </div>
+                <hr class="opacity-[0.3] mt-4 mb-4">
+                <div class="px-[8px]">
+                    <p class="text-[10px] opacity-[0.7]">#1 by john_doe</p>
+                    <p class="text-[10px] opacity-[0.7]">1/15/2024</p>
+                </div>
+            `
+            openn.appendChild(div);
+        }
+        else if (item.status === "closed"){
+            const div = document.createElement('div');
+            div.className = 'card-closed';
+            div.innerHTML = `
+                <div class="px-[8px] flex flex-col gap-2">
+                    <div class="flex justify-between items-center">
+                        <img src="../assets/Closed- Status .png" alt="">
+                        <p id="priority-${item.id}" class="all text-[9px] text- font-semibold px-3 py-[3px] rounded-lg">${item.priority}</p>
+                    </div>
+                    <h2 class="text-[14px]">${item.title}</h2>
+                    <p class="text-[10px] opacity-[0.7]">${item.description}</p>
+                    <div class="labels flex gap-2">
+                    </div>
+                </div>
+                <hr class="opacity-[0.3] mt-4 mb-4">
+                <div class="px-[8px]">
+                    <p class="text-[10px] opacity-[0.7]">#1 by john_doe</p>
+                    <p class="text-[10px] opacity-[0.7]">1/15/2024</p>
+                </div>
+            `
+            closed.appendChild(div);
         }
     });
 
@@ -110,6 +157,10 @@ const rcvData = (allData) => {
         }
     }
 
+    /* count data */
+    allCount.innerHTML = all.children.length;
+    openCount.innerHTML = openn.children.length;
+    closedCount.innerHTML = closed.children.length;
 }
 
 loadAllData();
