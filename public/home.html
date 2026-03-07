@@ -32,9 +32,12 @@
                         <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input type="search" required placeholder="Search Issues..." />
+                    <input type="search" id="search" required placeholder="Search Issues..." />
                 </label>
-                <button class="btn bg-primary text-white">Search</button>
+                <button onclick="search('search')" class="btn bg-primary text-white">Search</button>
+            </div>
+            <div>
+                <button onclick="logOut()" class="btn btn-secondary btn-sm">Log Out</button>
             </div>
         </div>
     </header>
@@ -89,6 +92,7 @@
                 </dialog>
             </section>
         </div>
+        <div id="search-data" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
     </main>
     <script src="../script/home.js"></script>
 </body>

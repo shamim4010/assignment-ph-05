@@ -7,10 +7,12 @@ document.getElementById("signin").addEventListener("click", function () {
             window.location.assign('./public/home.html')
         }
         else{
-            alert('password is wrong')
+            alert('password is wrong');
+            return
         }
     }
     else{
-        alart("username not exist")
+        alert("username not exist")
+        return
     }
 })
