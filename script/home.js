@@ -60,6 +60,8 @@ const rcvData = (allData) => {
                     <h2 class="text-[14px]">${item.title}</h2>
                     <p class="text-[10px] opacity-[0.7]">${item.description}</p>
                     <div class="labels flex gap-2">
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-xl">${item.labels[0]}</p>
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-full">${item.labels[1]}</p>
                     </div>
                 </div>
                 <hr class="opacity-[0.3] mt-4 mb-4">
@@ -82,6 +84,8 @@ const rcvData = (allData) => {
                     <h2 class="text-[14px]">${item.title}</h2>
                     <p class="text-[10px] opacity-[0.7]">${item.description}</p>
                     <div class="labels flex gap-2">
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-xl">${item.labels[0]}</p>
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-full">${item.labels[1]}</p>
                     </div>
                 </div>
                 <hr class="opacity-[0.3] mt-4 mb-4">
@@ -107,6 +111,8 @@ const rcvData = (allData) => {
                     <h2 class="text-[14px]">${item.title}</h2>
                     <p class="text-[10px] opacity-[0.7]">${item.description}</p>
                     <div class="labels flex gap-2">
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-xl">${item.labels[0]}</p>
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-full">${item.labels[1]}</p>
                     </div>
                 </div>
                 <hr class="opacity-[0.3] mt-4 mb-4">
@@ -129,6 +135,8 @@ const rcvData = (allData) => {
                     <h2 class="text-[14px]">${item.title}</h2>
                     <p class="text-[10px] opacity-[0.7]">${item.description}</p>
                     <div class="labels flex gap-2">
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-xl">${item.labels[0]}</p>
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-full">${item.labels[1]}</p>
                     </div>
                 </div>
                 <hr class="opacity-[0.3] mt-4 mb-4">
@@ -154,6 +162,33 @@ const rcvData = (allData) => {
         else if(p.innerHTML === "low"){
             p.classList.add('bg-gray-200','text-gray-500');
             p.innerHTML = 'LOW'
+        }
+    }
+    const lb = document.querySelectorAll(".labels");
+    for (let l of lb){
+        if (l.innerHTML === 'bug'){
+            l.classList.add('bg-red-100','text-red-500','border','border-red-200');
+            l.innerHTML = `<i class="fa-solid fa-bug" style="color: #fb2c36;"></i> BUG`
+        }
+        if (l.innerHTML === 'help wanted'){
+            l.classList.add('bg-orange-100','text-orange-500','border','border-orange-200');
+            l.innerHTML = `<i class="fa-solid fa-handshake-angle" style="color: #FF6900;"></i> HELP WANTED`
+        }
+        if (l.innerHTML === 'enhancement'){
+            l.classList.add('bg-green-100','text-green-500','border','border-green-200');
+            l.innerHTML = `<i class="fa-solid fa-arrow-trend-up" style="color: #39C950;"></i> ENHANCEMENT`
+        }
+        if (l.innerHTML === 'good first issue'){
+            l.classList.add('bg-blue-100','text-blue-500','border','border-blue-200');
+            l.innerHTML = `<i class="fa-regular fa-thumbs-up" style="color: #2B7FFF;"></i> GOOD FIRST ISSUE`
+        }
+        if (l.innerHTML === 'documentation'){
+            l.classList.add('bg-violet-100','text-violet-500','border','border-violet-200');
+            l.innerHTML = `<i class="fa-solid fa-file" style="color: #8E51FF;"></i> DOCUMENTATION`
+        }
+        if (l.innerHTML === 'undefined'){
+            l.remove();
+
         }
     }
 
