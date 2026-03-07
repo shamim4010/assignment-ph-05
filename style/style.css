@@ -10,3 +10,9 @@
     border-radius: 0.4rem;
     padding: 8px 0;
 }
+
+/* #all {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+} */

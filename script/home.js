@@ -218,7 +218,7 @@ const loadInfo = (rcvInfo) => {
             <h2 class="text-[14px]">${rcvInfo.title}</h2>
             <div class="flex items-center gap-2">
                 <p class="open-closed text-[12px] px-2 py-{3px} rounded-lg">${rcvInfo.status}</p>
-                <div class="text-[10px] opacity-[0.7]"><div aria-label="status" class="status status-xs status-primary"></div> Opened by ${rcvInfo.author} <div aria-label="status" class="status status-xs status-primary"></div> ${rcvInfo.createdAt}</div>
+                <div class="text-[10px] opacity-[0.7]"><div aria-label="status" class="status status-sm status-primary"></div> Opened by ${rcvInfo.author} <div aria-label="status" class="status status-sm status-primary"></div> ${rcvInfo.createdAt}</div>
             </div>
             <div class="labels flex gap-2">
                 <p class="labels-m text-[10px] font-semibold px-3 py-[3px] rounded-xl">${rcvInfo.labels[0]}</p>
@@ -245,7 +245,7 @@ const loadInfo = (rcvInfo) => {
             oc.innerHTML = 'Opened'
         }
         else if (oc.innerHTML === 'closed'){
-            oc.classList.add('bg-green-500','text-white')
+            oc.classList.add('bg-purple-600','text-white')
             oc.innerHTML = 'Closed'
         }
         
