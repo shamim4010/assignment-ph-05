@@ -55,7 +55,7 @@ const rcvData = (allData) => {
                 <div class="px-[8px] flex flex-col gap-2">
                     <div class="flex justify-between items-center">
                         <img src="../assets/Open-Status.png" alt="">
-                        <p class="priority text-[9px] font-semibold px-3 py-[3px] rounded-xl"></p>
+                        <p id="priority-${item.id}" class="all text-[9px] font-semibold px-3 py-[3px] rounded-lg">${item.priority}</p>
                     </div>
                     <h2 class="text-[14px]">${item.title}</h2>
                     <p class="text-[10px] opacity-[0.7]">${item.description}</p>
@@ -77,7 +77,7 @@ const rcvData = (allData) => {
                 <div class="px-[8px] flex flex-col gap-2">
                     <div class="flex justify-between items-center">
                         <img src="../assets/Closed- Status .png" alt="">
-                        <p class="priority-${item.id} text-[9px] font-semibold px-3 py-[3px] rounded-xl"></p>
+                        <p id="priority-${item.id}" class="all text-[9px] text- font-semibold px-3 py-[3px] rounded-lg">${item.priority}</p>
                     </div>
                     <h2 class="text-[14px]">${item.title}</h2>
                     <p class="text-[10px] opacity-[0.7]">${item.description}</p>
@@ -94,13 +94,22 @@ const rcvData = (allData) => {
         }
     });
 
-    allData.forEach(itemPy => {
-        if (itemPy.priority === "high"){
-            const py = document.getElementsByClassName(`priority-${itemPy.id}`);
-            py.classList.add('bg-red-100','text-red-500');
-            py.innerText = 'HIGH'
+    const py = document.querySelectorAll(".all");
+    for (let p of py){
+        if (p.innerHTML === "high"){
+                p.classList.add('bg-red-100','text-red-500');
+                p.innerHTML = 'HIGH';
         }
-    })
+        else if (p.innerHTML === "medium"){
+            p.classList.add('bg-orange-100','text-orange-500');
+            p.innerHTML = 'MEDIUM'
+        }
+        else if(p.innerHTML === "low"){
+            p.classList.add('bg-gray-200','text-gray-500');
+            p.innerHTML = 'LOW'
+        }
+    }
+
 }
 
 loadAllData();
