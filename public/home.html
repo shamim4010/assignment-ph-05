@@ -72,9 +72,46 @@
                 <div id="open" class="hidden"></div>
                 <div id="closed" class="hidden"></div>
             </section>
-            <section>
-                
+            <section id="modal">
+                <dialog id="my_modal_4" class="modal">
+                    <div class="modal-box w-9/10 max-w-sm">
+                        <form method="dialog">
+                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                        </form>
+                        <div id="alart-info" class="flex justify-center items-center">
+                        </div>
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <button class="btn btn-primary">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
             </section>
+            <!-- <section>
+                <div>
+                    <h2 class="text-[14px]">${itemInfo.title}</h2>
+                    <div class="flex items-center gap-2">
+                        <p class="px-2 py-{3px} rounded-lg">${itemInfo.status}</p>
+                        <div class="opacity-[0.7]"><div aria-label="status" class="status status-xs"></div> Opened by ${itemInfo.author} <div aria-label="status" class="status status-xs"></div> ${itemInfo.createdAt}</div>
+                    </div>
+                    <div class="labels flex gap-2">
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-xl">${itemInfo.labels[0]}</p>
+                        <p class="labels text-[9px] font-semibold px-3 py-[3px] rounded-full">${itemInfo.labels[1]}</p>
+                    </div>
+                    <p class="text-[10px] opacity-[0.7]">${itemInfo.description}</p>
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-[10px] opacity-[0.7]">Assignee:</p>
+                            <p class="text-[10px]">${itemInfo.assignee}</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] opacity-[0.7]">Priority:</p>
+                            <p class="all text-[9px] font-semibold px-3 py-[3px] rounded-lg">${itemInfo.priority}</p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
         </div>
     </main>
     <script src="../script/home.js"></script>
